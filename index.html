@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator | Muhammad Esharib</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+
+    <!-- Smooth scrolling -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body
+    class="flex flex-col min-h-screen bg-slate-100 dark:bg-slate-900 transition-colors duration-300"
+  >
+    <!-- MAIN -->
+    <main class="flex-grow flex items-center justify-center p-4">
+      <section
+        class="w-full max-w-md bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6 space-y-5"
+      >
+        <!-- HEADER -->
+        <header class="flex justify-between items-center">
+          <h1
+            class="text-xl sm:text-2xl font-bold text-slate-700 dark:text-slate-200"
+          >
+            Simple Calculator
+          </h1>
+          <button
+            id="themeToggle"
+            class="px-3 py-1.5 text-sm rounded-lg bg-blue-500 hover:bg-blue-600 text-white transition"
+          >
+            Dark Mode
+          </button>
+        </header>
+
+        <!-- DISPLAY -->
+        <div
+          id="display"
+          role="textbox"
+          aria-live="polite"
+          class="w-full min-h-[70px] bg-slate-100 dark:bg-slate-700 rounded-xl p-4 text-right text-2xl sm:text-3xl font-semibold break-words text-slate-800 dark:text-white"
+        >
+          0
+        </div>
+
+        <!-- BUTTONS -->
+        <section aria-label="Calculator Buttons" class="grid grid-cols-4 gap-3">
+          <!-- Row 1 -->
+          <button data-value="7" class="btn">7</button>
+          <button data-value="8" class="btn">8</button>
+          <button data-value="9" class="btn">9</button>
+          <button
+            data-action="clear"
+            class="btn bg-red-500 text-white hover:bg-red-600"
+          >
+            C
+          </button>
+
+          <!-- Row 2 -->
+          <button data-value="4" class="btn">4</button>
+          <button data-value="5" class="btn">5</button>
+          <button data-value="6" class="btn">6</button>
+          <button
+            data-action="delete"
+            class="btn bg-orange-500 text-white hover:bg-orange-600"
+          >
+            DEL
+          </button>
+
+          <!-- Row 3 -->
+          <button data-value="1" class="btn">1</button>
+          <button data-value="2" class="btn">2</button>
+          <button data-value="3" class="btn">3</button>
+          <button data-value="+" class="btn operator">+</button>
+
+          <!-- Row 4 -->
+          <button data-value="0" class="btn">0</button>
+          <button data-value="." class="btn">.</button>
+          <button data-value="-" class="btn operator">-</button>
+          <button data-value="*" class="btn operator">*</button>
+
+          <!-- Row 5 -->
+          <button data-value="/" class="btn operator">/</button>
+          <button
+            data-action="calculate"
+            class="col-span-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl py-3 transition"
+          >
+            =
+          </button>
+        </section>
+
+        <!-- HISTORY -->
+        <section
+          class="bg-slate-100 dark:bg-slate-700 rounded-xl p-4 max-h-40 overflow-y-auto"
+        >
+          <div class="flex justify-between items-center mb-2">
+            <h3
+              class="text-sm font-semibold text-slate-600 dark:text-slate-300"
+            >
+              History
+            </h3>
+            <button
+              id="clearHistory"
+              class="text-xs px-2 py-1 bg-red-500 hover:bg-red-600 text-white rounded"
+            >
+              Clear
+            </button>
+          </div>
+          <ul
+            id="historyList"
+            class="text-sm space-y-1 text-slate-700 dark:text-slate-200"
+          ></ul>
+        </section>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-800 text-slate-300 py-6 mt-10">
+      <div class="max-w-4xl mx-auto px-4 text-center space-y-3">
+        <h2 class="text-lg font-semibold text-white">Simple Calculator</h2>
+        <p class="text-sm leading-relaxed">
+          Simple Calculator is a lightweight and user-friendly web application
+          designed to perform basic arithmetic operations including addition,
+          subtraction, multiplication, and division. Built with modern web
+          technologies, it features dark mode support, calculation history
+          tracking, and a clean responsive design for seamless use across
+          devices.
+        </p>
+        <p class="text-sm">
+          Developed by
+          <span class="font-medium text-white">Muhammad Esharib</span>
+          as a frontend practice project using HTML, Tailwind CSS, and
+          JavaScript.
+        </p>
+        <div class="border-t border-slate-600 pt-3 text-xs text-slate-400">
+          <p>&copy; 2025 Simple Calculator. All rights reserved.</p>
+          <p>Version 1.0 | Designed for learning and demonstration purposes.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="main.js"></script>
+  </body>
+</html>
