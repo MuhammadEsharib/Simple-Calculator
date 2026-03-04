@@ -19,4 +19,4 @@ A modern web calculator built with **HTML**, **Tailwind CSS**, and **JavaScript*
 
 1. Clone or download this repository  
    ```bash
-   git clone https://github.com/yourusername/Simple-Calculator.git
+   git clone https://github.com/MuhammadEsharib/Simple-Calculator.git
